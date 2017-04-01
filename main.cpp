@@ -21,7 +21,22 @@ int main(int argc, const char * argv[]) {
         Pop(sq, e);
         std::cout<<e<<',';
     }
-    
+    cout<<endl;
+	SqStack convert;
+	InitStack(convert); //新建用于转进制的栈
+	int N = 5678;
+	while (N)
+	{
+		Push(convert, N % 8);
+		N = N / 8;
+	}
+	while (!StackEmpty(convert))
+	{
+		int result;
+		Pop(convert, result);
+		cout << result ;
+	}
+	cout << endl;
     
     return 0;
 
